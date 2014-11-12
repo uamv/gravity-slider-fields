@@ -16,7 +16,6 @@ class GF_Field_Slider extends GF_Field {
 			'range_setting',
 			'label_placement_setting',
 			'css_class_setting',
-			'size_setting',
 			'admin_label_setting',
 			'default_value_setting',
 			'visibility_setting',

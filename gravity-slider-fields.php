@@ -3,7 +3,7 @@
  * Plugin Name: Gravity Slider Fields
  * Plugin URI: http://vandercar.net/wp/gravity-slider-fields
  * Description: Adds slider fields to Gravity Forms
- * Version: 0.7
+ * Version: 0.8
  * Author: UaMV
  * Author URI: http://vandercar.net
  *
@@ -15,7 +15,7 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
  * @package Gravity Forms Slider Fields
- * @version 0.7
+ * @version 0.8
  * @author UaMV
  * @copyright Copyright (c) 2014, UaMV
  * @link http://vandercar.net/wp/gravity-slider-fields
@@ -25,7 +25,7 @@
 // Define the plugin directory url
 define( 'GSF_DIR_URL', plugin_dir_url( __FILE__ ) );
 define( 'GSF_DIR_PATH', plugin_dir_path( __FILE__ ) );
-define( 'GSF_VERSION', '0.7' );
+define( 'GSF_VERSION', '0.8' );
 
 // Do checks after plugins have loaded
 function gsf_gravity_form_check() {
