@@ -78,7 +78,7 @@ function gsf_add_field_buttons( $field_groups ) {
 			foreach ( $group['fields'] as $fkey => $field ) {
 
 				// If slider field, then grab it and unset from standard field group array
-				if ( "StartAddField('slider');" == $field['onclick'] ) {
+				if ( isset( $field['onclick'] ) && "StartAddField('slider');" == $field['onclick'] ) {
 
 					$slider = $field;
 					unset( $field_groups[ $gkey ]['fields'][ $fkey ] );
@@ -199,6 +199,20 @@ function gsf_tooltips( $tooltips ) {
 } // end gsf_tooltips
 add_filter( 'gform_tooltips', 'gsf_tooltips');
 
+// Enqueue all scripts and styles
+function gsf_enqueue() {
+
+	// Enqueue the styles
+	wp_enqueue_style( 'noUiSlider', GSF_DIR_URL . 'noUiSlider/jquery.nouislider.min.css', array(), GSF_VERSION );
+	wp_enqueue_style( 'noUiSlider-pips', GSF_DIR_URL . 'noUiSlider/jquery.nouislider.pips.min.css', array(), GSF_VERSION );
+	wp_enqueue_style( 'gslider-fields', GSF_DIR_URL . 'slider.min.css', array(), GSF_VERSION );
+
+	// Enqueue necessary scripts
+	wp_enqueue_script( 'noUiSlider', GSF_DIR_URL . 'noUiSlider/jquery.nouislider.all.min.js', array( 'jquery' ), GSF_VERSION );
+	wp_enqueue_script( 'gslider-fields', GSF_DIR_URL . 'slider.min.js', array( 'jquery', 'noUiSlider' ), GSF_VERSION );
+
+} // end gsf_enqueue
+
 // Add our scripts and styles if a slider field exists in the form
 function gsf_enqueue_scripts( $form, $is_ajax ) {
 
@@ -208,14 +222,7 @@ function gsf_enqueue_scripts( $form, $is_ajax ) {
 		// If a slider is found
 		if ( 'slider' == $field['type'] ) {
 
-			// Enqueue the styles
-			wp_enqueue_style( 'noUiSlider', GSF_DIR_URL . 'noUiSlider/jquery.nouislider.min.css', array(), GSF_VERSION );
-			wp_enqueue_style( 'noUiSlider-pips', GSF_DIR_URL . 'noUiSlider/jquery.nouislider.pips.min.css', array(), GSF_VERSION );
-			wp_enqueue_style( 'gslider-fields', GSF_DIR_URL . 'slider.min.css', array(), GSF_VERSION );
-
-			// Enqueue necessary scripts
-			wp_enqueue_script( 'noUiSlider', GSF_DIR_URL . 'noUiSlider/jquery.nouislider.all.min.js', array( 'jquery' ), GSF_VERSION );
-			wp_enqueue_script( 'gslider-fields', GSF_DIR_URL . 'slider.min.js', array( 'jquery', 'noUiSlider' ), GSF_VERSION );
+			gsf_enqueue();
 
 			// Then stop looking through the fields
 			break;
@@ -226,6 +233,29 @@ function gsf_enqueue_scripts( $form, $is_ajax ) {
 
 } // end gsf_enqueue_scripts
 add_action( 'gform_enqueue_scripts' , 'gsf_enqueue_scripts', 20, 2 );
+
+// Add our scripts and styles if a slider field exists in the form
+function gsf_admin_enqueue_scripts() {
+
+	if ( 'gf_edit_forms' == $_GET['page'] ) {
+
+		gsf_enqueue();
+
+	}
+
+} // end gsf_enqueue_scripts
+add_action( 'admin_enqueue_scripts', 'gsf_admin_enqueue_scripts' );
+
+function gsf_register_safe_script( $scripts ){
+
+    //registering my script with Gravity Forms so that it gets enqueued when running on no-conflict mode
+    $scripts[] = 'noUiSlider';
+    $scripts[] = 'gslider-fields';
+    
+    return $scripts;
+
+} // end gsf_register_safe_script
+add_filter( 'gform_noconflict_scripts', 'gsf_register_safe_script' );
 
 // Append min/max relation notes to label in notifications, confirmations and entry detail
 function gsf_pre_submission_filter( $form ) {
