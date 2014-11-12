@@ -46,7 +46,7 @@ The plugin adds a new slider field within the advanced field group. Customize yo
 * value relations (descriptive terms that relate to min & max number values of slider)
 * step (precision of values that can selected along the slider)
 * show value (select whether to hide, show on hover & drag, or always shows the currently selected value)
-*
+* unset slider (allow user to unset slider and submit empty value)
 
 If value relations have been defined, they will be displayed along with the field label in form entry details and when using merge tags.
 
@@ -76,6 +76,7 @@ Yes. You must install [Gravity Forms](http://gravityforms.com "Gravity Forms") f
 
 = 0.8 =
 * Adds rendering of field in form editor
+* Adds option to unset slider
 
 = 0.7 =
 * Added class existence check for GF_Fields
@@ -93,6 +94,7 @@ Yes. You must install [Gravity Forms](http://gravityforms.com "Gravity Forms") f
 
 = 0.8 =
 * Field rendering on form editor.
+* Unset the slider.
 
 = 0.7 =
 * First stable version!
