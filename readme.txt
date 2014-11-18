@@ -46,7 +46,6 @@ The plugin adds a new slider field within the advanced field group. Customize yo
 * value relations (descriptive terms that relate to min & max number values of slider)
 * step (precision of values that can selected along the slider)
 * show value (select whether to hide, show on hover & drag, or always shows the currently selected value)
-*
 
 If value relations have been defined, they will be displayed along with the field label in form entry details and when using merge tags.
 
