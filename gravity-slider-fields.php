@@ -139,7 +139,6 @@ function gsf_editor_js(){
 					jQuery("#slider_max_value_relation").val(field['slider_max_value_relation']);
 					jQuery("#slider_step").val(field['slider_step']);
 					jQuery("#slider_value_visibility").val(field['slider_value_visibility']);
-					jQuery("#slider_allow_empty").attr('checked',true==field['slider_allow_empty']);
 				});
 
 			});
@@ -183,14 +182,6 @@ function gsf_slider_settings( $position, $form_id ) {
 					</select>
 				</div>
 			</li>
-			<li class="slider_allow_empty field_setting">
-				<div><br />
-					<input type="checkbox" id="slider_allow_empty" onchange="SetFieldProperty('slider_allow_empty', this.checked);" />
-					<label for="slider_allow_empty" class="inline">
-						<?php _e( 'Allow user to unset slider (submit empty field value).', 'gsf-locale' ); ?>
-						<?php gform_tooltip( 'slider_allow_empty' ); ?>
-				</div>
-			</li>
 		<?php
 	}
 } // end gsf_slider_settings
@@ -202,7 +193,6 @@ function gsf_tooltips( $tooltips ) {
 	$tooltips['slider_value_relations'] = __( '<h6>Value Relations</h6>Enter descriptive terms that relate to the min and max number values of the slider.', 'gsf-locale' );
 	$tooltips['slider_step'] = __( '<h6>Step</h6>Enter a value that each interval or step will take between the min and max of the slider. The full specified value range of the slider (max - min) should be evenly divisible by the step and the step should not exceed a precision of two decimal places. (default: 1)', 'gsf-locale' );
 	$tooltips['slider_value_visibility'] = __( '<h6>Value Visibility</h6>Select whether to hide, show on hover & drag, or always show the currently selected value.', 'gsf-locale' );
-	$tooltips['slider_allow_empty'] = __( '<h6>Allow Empty Value</h6>Check this option to allow the user to unset the slider and empty the value in the field.', 'gsf-locale' );
 	
 	return $tooltips;
 

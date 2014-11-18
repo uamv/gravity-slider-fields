@@ -7,9 +7,6 @@
 .slider-display span[class$='val-relation'] {
 	margin: .5em;
 }
-label[id^="empty_input"] {
-	float: left;
-}
 .min-val-relation {
 	float: left;
 }

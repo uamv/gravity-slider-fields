@@ -24,7 +24,6 @@ jQuery(document).ready(function($){
 			var step = parseFloat(input.attr('step'));
 			var visibility = input.data('value-visibility');
 			var format = input.data('value-format');
-			var empty = input.data('allow-empty');
 
 			// If no default value, then add class
 			if( '' == input.attr('value') ) {
@@ -77,7 +76,6 @@ jQuery(document).ready(function($){
 				slide: function() {
 					slider.removeClass('gsf-inactive');
 					slider.find('.tooltip').show();
-					$('#empty_'+input.attr('id')).prop('checked',false);
 				}
 			});
 
@@ -111,31 +109,6 @@ jQuery(document).ready(function($){
 						'<span>' + formatVal.to( parseFloat( val ) ) + '</span>'
 					);
 				});
-			}
-
-			// If empty allowed
-			if( empty ) {
-
-				na = $('#empty_'+input.attr('id')+'_label');
-
-				// Get the width and add left margin to the slider
-				na_width = na.width();
-				slider.css('margin-left', na_width+30);
-
-				// Define onclick event
-				$('#empty_'+input.attr('id')).change( function() {
-					if ( true == $(this).prop('checked') ) {
-						$(this).data('slider-val',input.val());
-						input.val('');
-						slider.addClass('gsf-inactive');
-						slider.find('.tooltip').hide();
-					} else {
-						slider.removeClass('gsf-inactive');
-						slider.find('.tooltip').show();
-						input.val($(this).data('slider-val'));
-					}
-				});
-				
 			}
 
 			// If no default value, then remove value from input

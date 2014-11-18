@@ -23,8 +23,7 @@ class GF_Field_Slider extends GF_Field {
 			'conditional_logic_field_setting',
 			'slider_value_relations',
 			'slider_step',
-			'slider_value_visibility',
-			'slider_allow_empty',
+			'slider_value_visibility'
 		);
 	}
 
@@ -58,7 +57,7 @@ class GF_Field_Slider extends GF_Field {
 
 		$is_valid_number = $this->validate_range( $value ) && GFCommon::is_numeric( $raw_value, $this->numberFormat );
 
-		if ( ! $is_valid_number && ! $this->slider_allow_empty ) {
+		if ( ! $is_valid_number ) {
 			$this->failed_validation  = true;
 			$this->validation_message = empty( $this->errorMessage ) ? $this->get_range_message() : $this->errorMessage;
 		}
@@ -92,16 +91,14 @@ class GF_Field_Slider extends GF_Field {
 		$max     = $this->rangeMax;
 		$message = '';
 
-		if ( ! $this->slider_allow_empty ) {
-			if ( is_numeric( $min ) && is_numeric( $max ) ) {
-				$message = sprintf( __( 'Please enter a value between %s and %s.', 'gravityforms' ), "<strong>$min</strong>", "<strong>$max</strong>" );
-			} else if ( is_numeric( $min ) ) {
-				$message = sprintf( __( 'Please enter a value greater than or equal to %s.', 'gravityforms' ), "<strong>$min</strong>" );
-			} else if ( is_numeric( $max ) ) {
-				$message = sprintf( __( 'Please enter a value less than or equal to %s.', 'gravityforms' ), "<strong>$max</strong>" );
-			} else if ( $this->failed_validation ) {
-				$message = __( 'Please enter a valid number', 'gravityforms' );
-			}
+		if ( is_numeric( $min ) && is_numeric( $max ) ) {
+			$message = sprintf( __( 'Please enter a value between %s and %s.', 'gravityforms' ), "<strong>$min</strong>", "<strong>$max</strong>" );
+		} else if ( is_numeric( $min ) ) {
+			$message = sprintf( __( 'Please enter a value greater than or equal to %s.', 'gravityforms' ), "<strong>$min</strong>" );
+		} else if ( is_numeric( $max ) ) {
+			$message = sprintf( __( 'Please enter a value less than or equal to %s.', 'gravityforms' ), "<strong>$max</strong>" );
+		} else if ( $this->failed_validation ) {
+			$message = __( 'Please enter a valid number', 'gravityforms' );
 		}
 
 		return $message;
@@ -177,11 +174,7 @@ class GF_Field_Slider extends GF_Field {
 			$currency = '';
 		}
 
-		$html = "<div class='ginput_container'>";
-		$html .= $this->slider_allow_empty ? "<label id='empty_{$field_id}_label' for='empty_{$field_id}'><input type='checkbox' id='empty_{$field_id}' $disabled_text />" . apply_filters( 'gsf_unset_slider', 'N/A', $field_id ) . "</label>" : '';
-		$html .= sprintf( "<input name='input_%d' id='%s' type='{$html_input_type}' {$step_attr} {$min_attr} {$max_attr} {$data_value_visibility} value='%s' class='%s' data-min-relation='%s' data-max-relation='%s' data-value-format='%s' data-allow-empty='{$this->slider_allow_empty}' {$currency} {$tabindex} {$logic_event} {$read_only} {$placeholder_attribute} %s/>%s</div>", $id, $field_id, esc_attr( $value ), esc_attr( $class ), esc_attr( $this->slider_min_value_relation ), esc_attr( $this->slider_max_value_relation ), esc_attr( $this->numberFormat ), $disabled_text, $instruction );
-
-		return $html;
+		return sprintf( "<div class='ginput_container'><input name='input_%d' id='%s' type='{$html_input_type}' {$step_attr} {$min_attr} {$max_attr} {$data_value_visibility} value='%s' class='%s' data-min-relation='%s' data-max-relation='%s' data-value-format='%s' {$currency} {$tabindex} {$logic_event} {$read_only} {$placeholder_attribute} %s/>%s</div>", $id, $field_id, esc_attr( $value ), esc_attr( $class ), esc_attr( $this->slider_min_value_relation ), esc_attr( $this->slider_max_value_relation ), esc_attr( $this->numberFormat ), $disabled_text, $instruction );
 
 	}
 
