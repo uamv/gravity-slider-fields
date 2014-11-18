@@ -116,6 +116,12 @@ jQuery(document).ready(function($){
 			// If empty allowed
 			if( empty ) {
 
+				na = $('#empty_'+input.attr('id')+'_label');
+
+				// Get the width and add left margin to the slider
+				na_width = na.width();
+				slider.css('margin-left', na_width+30);
+
 				// Define onclick event
 				$('#empty_'+input.attr('id')).change( function() {
 					if ( true == $(this).prop('checked') ) {
@@ -128,13 +134,6 @@ jQuery(document).ready(function($){
 						slider.find('.tooltip').show();
 						input.val($(this).data('slider-val'));
 					}
-				});
-
-				$( window ).load(function() {
-					naw = $('#empty_'+input.attr('id')+'_label').width();
-
-					// Get the width and add left margin to the slider
-					slider.css('margin-left', naw+30);
 				});
 				
 			}
