@@ -7,11 +7,11 @@
  * Author: UaMV
  * Author URI: http://vandercar.net
  *
- * This program is free software; you can redistribute it and/or modify it under the terms of the GNU 
- * General Public License version 2, as published by the Free Software Foundation.  You may NOT assume 
+ * This program is free software; you can redistribute it and/or modify it under the terms of the GNU
+ * General Public License version 2, as published by the Free Software Foundation.  You may NOT assume
  * that you can use any other version of the GPL.
  *
- * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without 
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
  * @package Gravity Forms Slider Fields
@@ -44,13 +44,13 @@ function gsf_gravity_form_check() {
 		add_action( 'admin_notices', 'gsf_plugin_deactivate_admin_notice' );
 
 		function gsf_plugin_deactivate() {
-			
+
 			deactivate_plugins( plugin_basename( __FILE__ ) );
 
 		} // end gsf_plugin_deactivate
 
 		function gsf_plugin_deactivate_admin_notice() {
-			
+
 			echo '<div class="error"><p><strong>Gravity Slider Fields</strong> has been deactivated, as it requires Gravity Forms v1.9 or greater.</p></div>';
 			if ( isset( $_GET['activate'] ) ) {
 
@@ -132,7 +132,7 @@ function gsf_editor_js(){
 	?>
 		<script type='text/javascript'>
 			jQuery(document).ready(function($) {
-				
+
 				// Bind to the load field settings event to initialize the slider settings
 				$(document).bind("gform_load_field_settings", function(event, field, form){
 					jQuery("#slider_min_value_relation").val(field['slider_min_value_relation']);
@@ -149,7 +149,7 @@ add_action( 'gform_editor_js', 'gsf_editor_js' );
 
 // Render custom options for the field
 function gsf_slider_settings( $position, $form_id ) {
-	
+
 	// Create settings on position 1550 (right after range option)
 	if ( 1550 == $position ) {
 		?>
@@ -193,7 +193,7 @@ function gsf_tooltips( $tooltips ) {
 	$tooltips['slider_value_relations'] = __( '<h6>Value Relations</h6>Enter descriptive terms that relate to the min and max number values of the slider.', 'gsf-locale' );
 	$tooltips['slider_step'] = __( '<h6>Step</h6>Enter a value that each interval or step will take between the min and max of the slider. The full specified value range of the slider (max - min) should be evenly divisible by the step and the step should not exceed a precision of two decimal places. (default: 1)', 'gsf-locale' );
 	$tooltips['slider_value_visibility'] = __( '<h6>Value Visibility</h6>Select whether to hide, show on hover & drag, or always show the currently selected value.', 'gsf-locale' );
-	
+
 	return $tooltips;
 
 } // end gsf_tooltips
@@ -203,13 +203,13 @@ add_filter( 'gform_tooltips', 'gsf_tooltips');
 function gsf_enqueue() {
 
 	// Enqueue the styles
-	wp_enqueue_style( 'noUiSlider', GSF_DIR_URL . 'noUiSlider/jquery.nouislider.min.css', array(), GSF_VERSION );
-	wp_enqueue_style( 'noUiSlider-pips', GSF_DIR_URL . 'noUiSlider/jquery.nouislider.pips.min.css', array(), GSF_VERSION );
+	wp_enqueue_style( 'noUiSlider', GSF_DIR_URL . 'noUiSlider/nouislider.min.css', array(), GSF_VERSION );
 	wp_enqueue_style( 'gslider-fields', GSF_DIR_URL . 'slider.min.css', array(), GSF_VERSION );
 
 	// Enqueue necessary scripts
-	wp_enqueue_script( 'noUiSlider', GSF_DIR_URL . 'noUiSlider/jquery.nouislider.all.min.js', array( 'jquery' ), GSF_VERSION );
-	wp_enqueue_script( 'gslider-fields', GSF_DIR_URL . 'slider.min.js', array( 'jquery', 'noUiSlider' ), GSF_VERSION );
+	wp_enqueue_script( 'noUiSlider', GSF_DIR_URL . 'noUiSlider/nouislider.min.js', array( 'jquery' ), GSF_VERSION );
+	wp_enqueue_script( 'wNumb', GSF_DIR_URL . 'wNumb/wNumb.js', array( 'jquery' ), GSF_VERSION );
+	wp_enqueue_script( 'gslider-fields', GSF_DIR_URL . 'slider.js', array( 'jquery', 'wNumb', 'noUiSlider' ), GSF_VERSION );
 
 } // end gsf_enqueue
 
@@ -218,7 +218,7 @@ function gsf_enqueue_scripts( $form, $is_ajax ) {
 
 	// Loop through form fields
 	foreach ( $form['fields'] as $field ) {
-		
+
 		// If a slider is found
 		if ( 'slider' == $field['type'] ) {
 
@@ -237,7 +237,7 @@ add_action( 'gform_enqueue_scripts' , 'gsf_enqueue_scripts', 20, 2 );
 // Add our scripts and styles if a slider field exists in the form
 function gsf_admin_enqueue_scripts() {
 
-	if ( 'gf_edit_forms' == $_GET['page'] ) {
+	if ( 'toplevel_page_gf_edit_forms' == get_current_screen()->id && 'gf_edit_forms' == $_GET['page'] ) {
 
 		gsf_enqueue();
 
@@ -251,7 +251,7 @@ function gsf_register_safe_script( $scripts ){
     //registering my script with Gravity Forms so that it gets enqueued when running on no-conflict mode
     $scripts[] = 'noUiSlider';
     $scripts[] = 'gslider-fields';
-    
+
     return $scripts;
 
 } // end gsf_register_safe_script
@@ -262,7 +262,7 @@ function gsf_pre_submission_filter( $form ) {
 
 	// Loop through form fields
 	foreach ( $form['fields'] as &$field ) {
-		
+
 		// If a slider is found
 		if ( 'slider' == $field['type'] ) {
 
