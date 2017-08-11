@@ -1,20 +1,16 @@
 === Gravity Slider Fields ===
 
 Contributors: UaMV
-Donate link: http://vandercar.net/wp
+Donate link: https://typewheel.xyz/give
 Tags: gravity, forms, slider, field, number
 Requires at least: 3.1
 Tested up to: 4.0
-Stable tag: 0.8
+Stable tag: 0.9
 License: GPLv2 or later
 
 Adds slider fields to Gravity Forms
 
 == Description ==
-
-> **PLEASE NOTE & BEWARE:** With only 13 downloads, I have already received one report of this plugin taking a site down upon installation. I am investigating and hope to diagnose the conflict. If you can assist my sleuthing in any way, post to the support thread or ping me @UaMV on Twitter. Proceed with caution and courage. Thank you! [5 Nov 2014]
-
-> **UPDATE:** Thanks to [@sccr410](https://profiles.wordpress.org/sccr410 "@sccr410") who identified my ineptitude in developing against a project in beta. Gravity Slider Fields v0.4, v0.5, & v0.6 are unstable will likely take down your site. Version 0.7 requires Gravity Forms v1.9 which is currently in beta. [6 Nov 2014]
 
 > This plugin is an add-on for the [Gravity Forms](http://gravityforms.com "Gravity Forms") plugin.
 > Gravity Forms v1.9 or greater is required.
@@ -49,9 +45,6 @@ The plugin adds a new slider field within the advanced field group. Customize yo
 
 If value relations have been defined, they will be displayed along with the field label in form entry details and when using merge tags.
 
-= Please Note =
-Currently, slider fields are not supported for ajax enabled forms.
-
 = Credits =
 In order to play nice with touch devices, Gravity Slider Fields utilizes [noUiSlider](http://refreshless.com/nouislider "noUiSlider") (developed by [Léon Gersen](http://twitter.com/LeonGersen))
 
@@ -73,6 +66,10 @@ Yes. You must install [Gravity Forms](http://gravityforms.com "Gravity Forms") f
 
 == Changelog ==
 
+= 0.9 =
+* Plays nicer with Gravity Forms
+* Updates noUiSlider version
+
 = 0.8 =
 * Adds rendering of field in form editor
 
@@ -89,6 +86,10 @@ Yes. You must install [Gravity Forms](http://gravityforms.com "Gravity Forms") f
 * Initial Release
 
 == Upgrade Notice ==
+
+= 0.9 =
+* Plays nicer with Gravity Forms
+* Updates noUiSlider version
 
 = 0.8 =
 * Field rendering on form editor.
