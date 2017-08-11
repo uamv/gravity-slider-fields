@@ -4,16 +4,13 @@ Contributors: UaMV
 Donate link: https://typewheel.xyz/give
 Tags: gravity, forms, slider, field, number
 Requires at least: 3.1
-Tested up to: 4.0
-Stable tag: 0.9
+Tested up to: 4.8.1
+Stable tag: 1.0
 License: GPLv2 or later
 
 Adds slider fields to Gravity Forms
 
 == Description ==
-
-> This plugin is an add-on for the [Gravity Forms](http://gravityforms.com "Gravity Forms") plugin.
-> Gravity Forms v1.9 or greater is required.
 
 Gravity Forms does not yet support slider fields. Until that time, this plugin may serve the purpose well.
 
@@ -65,6 +62,9 @@ Yes. You must install [Gravity Forms](http://gravityforms.com "Gravity Forms") f
 1. Custom slider options
 
 == Changelog ==
+
+= 1.0 =
+* rewrite codebase to use GFAddOn
 
 = 0.9 =
 * Plays nicer with Gravity Forms
