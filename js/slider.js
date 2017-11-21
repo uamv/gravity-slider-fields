@@ -121,6 +121,9 @@ jQuery(document).ready(function($){
 					//Hide the input
 					input.hide();
 
+					// Triggers update of merge tags on mouseup and keyup
+					$('.gfield .slider').trigger('change');
+
 				})
 
 
@@ -140,4 +143,5 @@ jQuery(document).ready(function($){
 	jQuery(document).bind('gform_page_loaded', sliderInit);
 
 	sliderInit();
+
 });
