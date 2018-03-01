@@ -5,7 +5,7 @@ Donate link: https://typewheel.xyz/give
 Tags: gravity, forms, slider, field, number
 Requires at least: 3.1
 Tested up to: 4.9
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv2 or later
 
 Adds slider fields to Gravity Forms
@@ -63,6 +63,10 @@ Yes. You must install [Gravity Forms](http://gravityforms.com "Gravity Forms") f
 
 == Changelog ==
 
+= 1.2 =
+* Fixes jQuery error in loading noUiSlider
+* Adds delayed & dismissible admin notice
+
 = 1.1 =
 * The slider merge tag can now be used in calculations *
 
@@ -89,6 +93,10 @@ Yes. You must install [Gravity Forms](http://gravityforms.com "Gravity Forms") f
 * Initial Release
 
 == Upgrade Notice ==
+
+= 1.2 =
+* Fixes jQuery error in loading noUiSlider
+* Adds delayed & dismissible admin notice
 
 = 1.1 =
 * You can now use slider merge tags in calculations

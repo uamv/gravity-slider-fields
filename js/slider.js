@@ -140,7 +140,11 @@ jQuery(document).ready(function($){
 		renderSlider();
 	};
 
-	jQuery(document).bind('gform_page_loaded', sliderInit);
+	jQuery(document).bind('gform_page_loaded', function() {
+		if ( $('.gfield .slider').length ) {
+			sliderInit;
+		}
+	});
 
 	sliderInit();
 
