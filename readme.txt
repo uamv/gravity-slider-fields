@@ -4,8 +4,9 @@ Contributors: UaMV
 Donate link: https://typewheel.xyz/give
 Tags: gravity, forms, slider, field, number
 Requires at least: 3.1
-Tested up to: 4.9
-Stable tag: 1.4
+Requires PHP: 5.6
+Tested up to: 5.2
+Stable tag: 1.5
 License: GPLv2 or later
 
 Adds slider fields to Gravity Forms
@@ -63,6 +64,10 @@ Yes. You must install [Gravity Forms](http://gravityforms.com "Gravity Forms") f
 
 == Changelog ==
 
+= 1.5 =
+* Update noUiSlider to 13.1.4
+* Add calculation merge tags
+
 = 1.4 =
 * Delay the notice
 
@@ -99,6 +104,10 @@ Yes. You must install [Gravity Forms](http://gravityforms.com "Gravity Forms") f
 * Initial Release
 
 == Upgrade Notice ==
+
+= 1.5 =
+* Update noUiSlider to 13.1.4
+* Add calculation merge tags
 
 = 1.3 =
 * Fix the fix introduced in v1.2

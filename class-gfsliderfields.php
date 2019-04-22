@@ -58,6 +58,8 @@ class GFSliderFields extends GFAddOn {
             __( 'Select whether to hide, show on hover & drag, or always show the currently selected value.', 'typewheel' )
         ) );
 
+		add_filter( 'gform_custom_merge_tags', array( $this, 'slider_calculation_merge_tags' ), 10, 4 );
+
         // control submission & rendering of form_settings
         add_filter( 'gform_pre_submission_filter', array( $this, 'pre_submission_filter' ) );
         ( isset( $_GET['page'] ) && 'gf_entries' == $_GET['page'] ) ? add_filter( 'gform_admin_pre_render', array( $this, 'pre_submission_filter' ) ) : FALSE;
@@ -290,6 +292,32 @@ class GFSliderFields extends GFAddOn {
     		<?php
     	}
     } // end slider_settings
+
+	/**
+     * Add merge tags to calculation drop down
+     *
+     * @since    1.5
+     */
+	function slider_calculation_merge_tags( $merge_tags, $form_id, $fields, $element_id ) {
+
+		// check the type of merge tag dropdown
+		if ( 'field_calculation_formula' != $element_id ) {
+			return $merge_tags;
+		}
+
+		foreach ( $fields as $field ) {
+
+			// check the field type as we only want to generate merge tags for list fields
+			if ( 'slider' != $field->get_input_type() ) {
+				continue;
+			}
+
+			$merge_tags[] = array( 'label' => $field->label, 'tag' => '{' . $field->label . ':' . $field->id . '}' );
+
+		}
+
+		return $merge_tags;
+	} // END slider_calculation_merge_tags
 
     /**
      * Append min/max relation notes to label in notifications, confirmations and entry detail
