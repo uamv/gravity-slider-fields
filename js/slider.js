@@ -142,7 +142,7 @@ jQuery(document).ready(function($){
 
 	jQuery(document).bind('gform_page_loaded', function() {
 		if ( $('.gfield .slider').length ) {
-			sliderInit;
+			sliderInit();
 		}
 	});
 

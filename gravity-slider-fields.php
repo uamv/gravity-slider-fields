@@ -3,7 +3,7 @@
 Plugin Name: Gravity Slider Fields
 Plugin URI: https://wordpress.org/plugins/gravity-slider-fields/
 Description: Adds slider fields to Gravity Forms
-Version: 1.2
+Version: 1.4
 Author: Typewheel
 Author URI: https://typewheel.xyz/
 
@@ -25,7 +25,7 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 */
 
-define( 'GF_SLIDER_FIELDS_VERSION', '1.2' );
+define( 'GF_SLIDER_FIELDS_VERSION', '1.4' );
 
 add_action( 'gform_loaded', array( 'GF_Slider_Fields_Bootstrap', 'load' ), 5 );
 
@@ -75,7 +75,7 @@ if ( apply_filters( 'gsf_show_notices', true ) ) {
 			$typewheel_notices = array(
 				$prefix . '-give' => array(
 					'trigger' => true,
-					'time' => time(),
+					'time' => time() + 2592000,
 					'dismiss' => array( 'month' ),
 					'type' => '',
 					'content' => 'Is <strong>Gravity Slider Fields</strong> working well for you? Please consider giving <a href="https://wordpress.org/support/plugin/gravity-slider-fields/reviews/?rate=5#new-post" target="_blank"><i class="dashicons dashicons-star-filled"></i> a review</a>, <a href="https://twitter.com/intent/tweet/?url=https%3A%2F%2Fwordpress.org%2Fplugins%2Fgravity-slider-fields%2F" target="_blank"><i class="dashicons dashicons-twitter"></i> a tweet</a> or <a href="https://typewheel.xyz/give/?ref=Glance%20That" target="_blank"><i class="dashicons dashicons-heart"></i> a donation</a> to encourage further development. Thanks! <a href="https://twitter.com/uamv/">@uamv</a>',

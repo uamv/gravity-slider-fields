@@ -5,7 +5,7 @@ Donate link: https://typewheel.xyz/give
 Tags: gravity, forms, slider, field, number
 Requires at least: 3.1
 Tested up to: 4.9
-Stable tag: 1.2
+Stable tag: 1.4
 License: GPLv2 or later
 
 Adds slider fields to Gravity Forms
@@ -63,6 +63,12 @@ Yes. You must install [Gravity Forms](http://gravityforms.com "Gravity Forms") f
 
 == Changelog ==
 
+= 1.4 =
+* Delay the notice
+
+= 1.3 =
+* Fix the fix
+
 = 1.2 =
 * Fixes jQuery error in loading noUiSlider
 * Adds delayed & dismissible admin notice
@@ -93,6 +99,9 @@ Yes. You must install [Gravity Forms](http://gravityforms.com "Gravity Forms") f
 * Initial Release
 
 == Upgrade Notice ==
+
+= 1.3 =
+* Fix the fix introduced in v1.2
 
 = 1.2 =
 * Fixes jQuery error in loading noUiSlider
