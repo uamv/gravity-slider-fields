@@ -69,6 +69,7 @@ Yes. You must install [Gravity Forms](http://gravityforms.com "Gravity Forms") f
 * Add calculation merge tags
 * Fix hover-drag issue
 * Fix tab focus issue
+* Fix for error: `Slider was already initialized`
 
 = 1.4 =
 * Delay the notice
@@ -110,6 +111,9 @@ Yes. You must install [Gravity Forms](http://gravityforms.com "Gravity Forms") f
 = 1.5 =
 * Update noUiSlider to 13.1.4
 * Add calculation merge tags
+* Fix hover-drag issue
+* Fix tab focus issue
+* Fix for error: `Slider was already initialized`
 
 = 1.3 =
 * Fix the fix introduced in v1.2
