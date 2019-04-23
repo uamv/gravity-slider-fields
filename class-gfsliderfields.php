@@ -97,7 +97,7 @@ class GFSliderFields extends GFAddOn {
 			),
 			array(
 				'handle'  => 'slider_fields',
-				'src'     => $this->get_base_url() . '/js/slider.js',
+				'src'     => $this->get_base_url() . '/js/slider.min.js',
 				'version' => $this->_version,
 				'deps'    => array( 'jquery', 'noUiSlider', 'wNumb' ),
 				'enqueue' => array(

@@ -9,8 +9,6 @@ jQuery(document).ready(function($){
 		}
 
 		var renderSlider = function () {
-			// Insert the slider div after a slider input
-			// $("<div class='slider-display'></div>").insertAfter("input.slider");
 
 			// Do this for each slider div
 			$('.slider-display').each(function(i,GFSlider) {
@@ -95,11 +93,6 @@ jQuery(document).ready(function($){
 					GFSlider.noUiSlider.on('update', function(sliderVal) {
 
 						input.attr('value',sliderVal);
-
-						// input.value = sliderValue;
-
-						//Hide the input
-						// input.hide();
 
 						// Triggers update of merge tags on mouseup and keyup
 						$('.gfield .slider').trigger('change');
