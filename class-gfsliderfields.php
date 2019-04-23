@@ -97,7 +97,7 @@ class GFSliderFields extends GFAddOn {
 			),
 			array(
 				'handle'  => 'slider_fields',
-				'src'     => $this->get_base_url() . '/js/slider.min.js',
+				'src'     => $this->get_base_url() . '/js/slider.js',
 				'version' => $this->_version,
 				'deps'    => array( 'jquery', 'noUiSlider', 'wNumb' ),
 				'enqueue' => array(
@@ -130,7 +130,7 @@ class GFSliderFields extends GFAddOn {
             ),
             array(
                 'handle'  => 'slider_fields',
-                'src'     => $this->get_base_url() . '/css/slider.min.css',
+                'src'     => $this->get_base_url() . '/css/slider.css',
                 'version' => $this->_version,
                 'enqueue' => array(
                     array( 'admin_page' => array( 'form_settings' ) ),

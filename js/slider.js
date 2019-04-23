@@ -19,6 +19,7 @@ jQuery(document).ready(function($){
 				var slider = $(this);
 				var input = slider.prev(':input');
 				var value = input.val();
+				var gfield = input.attr('id');
 				var tabindex = input.attr('tabindex');
 				var minrel = input.data('min-relation');
 				var maxrel = input.data('max-relation');
@@ -27,12 +28,6 @@ jQuery(document).ready(function($){
 				var step = parseFloat(input.attr('step'));
 				var visibility = input.data('value-visibility');
 				var format = input.data('value-format');
-
-				// If no default value, then add class
-				if( '' == input.attr('value') ) {
-					slider.addClass('gsf-inactive');
-					slider.find('.tooltip').hide();
-				}
 
 				// Check whether step needs to be limited by the decimals available in the currency
 				if ( 'currency' == format ) {
@@ -92,25 +87,7 @@ jQuery(document).ready(function($){
 					tooltips: formatTooltip,
 				});
 
-				var handle = GFSlider.querySelector('.noUi-handle');
 
-					handle.setAttribute('tabindex', tabindex);
-
-					handle.addEventListener('click', function(){
-						this.focus();
-					});
-
-					handle.addEventListener('keydown', function( e ) {
-
-						var sliderValue = Number( GFSlider.noUiSlider.get() );
-
-						switch ( e.which ) {
-							case 37: GFSlider.noUiSlider.set( sliderValue - step );
-								break;
-							case 39: GFSlider.noUiSlider.set( sliderValue + step );
-								break;
-						}
-					});
 
 				GFSlider.noUiSlider.on('update', function(sliderVal) {
 
@@ -119,18 +96,16 @@ jQuery(document).ready(function($){
 					// input.value = sliderValue;
 
 					//Hide the input
-					input.hide();
+					// input.hide();
 
 					// Triggers update of merge tags on mouseup and keyup
 					$('.gfield .slider').trigger('change');
 
-				})
+				});
 
-
-				// If no default value, then remove value from input
-				if ( ! value ) {
-					input.val('');
-				}
+				document.getElementById(gfield).addEventListener('change', function () {
+				    GFSlider.noUiSlider.set(this.value);
+				});
 
 				// Add min and max relation note
 				slider.append('<span class="min-val-relation">' + minrel + '</span><span class="max-val-relation">' + maxrel + '</span>' );

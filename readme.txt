@@ -67,6 +67,8 @@ Yes. You must install [Gravity Forms](http://gravityforms.com "Gravity Forms") f
 = 1.5 =
 * Update noUiSlider to 13.1.4
 * Add calculation merge tags
+* Fix hover-drag issue
+* Fix tab focus issue
 
 = 1.4 =
 * Delay the notice
