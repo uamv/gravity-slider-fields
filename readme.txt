@@ -1,7 +1,7 @@
 === Gravity Slider Fields ===
 
 Contributors: UaMV
-Donate link: https://typewheel.xyz/give
+Donate link: https://typewheel.xyz/give/?ref=Gravity%20Slider%20Fields
 Tags: gravity, forms, slider, field, number
 Requires at least: 3.1
 Requires PHP: 5.6
