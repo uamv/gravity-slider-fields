@@ -156,8 +156,6 @@ class GF_Field_Slider extends GF_Field {
 			$value = ( $min + $max ) / 2;
 		}
 
-		$logic_event = $this->get_conditional_logic_event( 'keyup' );
-
 		$placeholder_attribute = $this->get_field_placeholder_attribute();
 
 		$tabindex = $this->get_tabindex();
@@ -179,7 +177,7 @@ class GF_Field_Slider extends GF_Field {
 			$currency = '';
 		}
 
-		return sprintf( "<div class='ginput_container'><input name='input_%d' id='%s' type='{$html_input_type}' {$step_attr} {$min_attr} {$max_attr} {$data_value_visibility} value='%s' class='%s' data-min-relation='%s' data-max-relation='%s' data-value-format='%s' {$currency} {$tabindex} {$logic_event} {$read_only} {$placeholder_attribute} %s/><div id='gsfslider_%d' class='slider-display'></div>%s</div>", $id, $field_id, esc_attr( $value ), esc_attr( $class ), esc_attr( $this->slider_min_value_relation ), esc_attr( $this->slider_max_value_relation ), esc_attr( $this->numberFormat ), $disabled_text, $id, $instruction );
+		return sprintf( "<div class='ginput_container'><input name='input_%d' id='%s' type='{$html_input_type}' {$step_attr} {$min_attr} {$max_attr} {$data_value_visibility} value='%s' class='%s' data-min-relation='%s' data-max-relation='%s' data-value-format='%s' {$currency} {$tabindex} {$read_only} {$placeholder_attribute} %s/><div id='gsfslider_%d' class='slider-display'></div>%s</div>", $id, $field_id, esc_attr( $value ), esc_attr( $class ), esc_attr( $this->slider_min_value_relation ), esc_attr( $this->slider_max_value_relation ), esc_attr( $this->numberFormat ), $disabled_text, $id, $instruction );
 
 	}
 

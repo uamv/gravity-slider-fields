@@ -5,8 +5,8 @@ Donate link: https://typewheel.xyz/give/?ref=Gravity%20Slider%20Fields
 Tags: gravity, forms, slider, field, number
 Requires at least: 3.1
 Requires PHP: 5.6
-Tested up to: 5.2
-Stable tag: 1.5
+Tested up to: 5.3
+Stable tag: 1.6
 License: GPLv2 or later
 
 Adds slider fields to Gravity Forms
@@ -64,6 +64,9 @@ Yes. You must install [Gravity Forms](http://gravityforms.com "Gravity Forms") f
 
 == Changelog ==
 
+= 1.6 =
+* Remove call to deprecated GF_Field::get_conditional_logic_event
+
 = 1.5 =
 * Update noUiSlider to 13.1.4
 * Add calculation merge tags
@@ -102,38 +105,6 @@ Yes. You must install [Gravity Forms](http://gravityforms.com "Gravity Forms") f
 
 = 0.5 =
 * Fix for slider failure in certain instance
-
-= 0.4 =
-* Initial Release
-
-== Upgrade Notice ==
-
-= 1.5 =
-* Update noUiSlider to 13.1.4
-* Add calculation merge tags
-* Fix hover-drag issue
-* Fix tab focus issue
-* Fix for error: `Slider was already initialized`
-
-= 1.3 =
-* Fix the fix introduced in v1.2
-
-= 1.2 =
-* Fixes jQuery error in loading noUiSlider
-* Adds delayed & dismissible admin notice
-
-= 1.1 =
-* You can now use slider merge tags in calculations
-
-= 0.9 =
-* Plays nicer with Gravity Forms
-* Updates noUiSlider version
-
-= 0.8 =
-* Field rendering on form editor.
-
-= 0.7 =
-* First stable version!
 
 = 0.4 =
 * Initial Release
