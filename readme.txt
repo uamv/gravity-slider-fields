@@ -6,7 +6,7 @@ Tags: gravity, forms, slider, field, number
 Requires at least: 3.1
 Requires PHP: 5.6
 Tested up to: 5.3
-Stable tag: 1.6
+Stable tag: 1.8
 License: GPLv2 or later
 
 Adds slider fields to Gravity Forms
@@ -25,6 +25,7 @@ The plugin adds a new slider field within the advanced field group. Customize yo
 * description
 * number format
 * range
+* handle connects
 * field label visibility
 * description placement
 * custom css class
@@ -63,6 +64,12 @@ Yes. You must install [Gravity Forms](http://gravityforms.com "Gravity Forms") f
 1. Custom slider options
 
 == Changelog ==
+
+= 1.8 =
+* Fix: Properly handle connect option for existing slider fields
+
+= 1.7 =
+* Allow connecting handle to lower or upper edge
 
 = 1.6 =
 * Remove call to deprecated GF_Field::get_conditional_logic_event

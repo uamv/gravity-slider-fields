@@ -27,6 +27,7 @@ jQuery(document).ready(function($){
 					var max = parseFloat(input.attr('max'));
 					var step = parseFloat(input.attr('step'));
 					var visibility = input.data('value-visibility');
+               var connect = input.data('connect');
 					var format = input.data('value-format');
 
 					// Check whether step needs to be limited by the decimals available in the currency
@@ -84,6 +85,7 @@ jQuery(document).ready(function($){
 						format: wNumb({
 							decimals: decs,
 						}),
+                  connect: connect,
 						tooltips: formatTooltip,
 					});
 

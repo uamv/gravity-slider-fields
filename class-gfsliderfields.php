@@ -57,6 +57,11 @@ class GFSliderFields extends GFAddOn {
             __( 'Value Visibility', 'typewheel' ),
             __( 'Select whether to hide, show on hover & drag, or always show the currently selected value.', 'typewheel' )
         ) );
+        $this->add_tooltip( 'slider_connect', sprintf(
+            '<h6>%s</h6> %s',
+            __( 'Connecting Elements', 'typewheel' ),
+            __( 'Select whether to visually connect the handle to the upper or lower edge of the slider.', 'typewheel' )
+        ) );
 
 		add_filter( 'gform_custom_merge_tags', array( $this, 'slider_calculation_merge_tags' ), 10, 4 );
 
@@ -223,6 +228,7 @@ class GFSliderFields extends GFAddOn {
     	        field.rangeMax = 10;
     	        field.slider_step = 1;
     	        field.slider_value_visibility = "hidden";
+              field.slider_connect = "none";
     	    break;
     	<?php
     } // end set_defaults
@@ -243,6 +249,7 @@ class GFSliderFields extends GFAddOn {
     					jQuery("#slider_max_value_relation").val(field['slider_max_value_relation']);
     					jQuery("#slider_step").val(field['slider_step']);
     					jQuery("#slider_value_visibility").val(field['slider_value_visibility']);
+    					jQuery("#slider_connect").val(field['slider_connect']);
     				});
 
     			});
@@ -286,6 +293,19 @@ class GFSliderFields extends GFAddOn {
     						<option value="hidden"><?php _e( 'Hidden', 'gsf-locale' ); ?></option>
     						<option value="hover-drag"><?php _e( 'Hover/Drag', 'gsf-locale' ); ?></option>
     						<option value="show"><?php _e( 'Shown', 'gsf-locale' ); ?></option>
+    					</select>
+    				</div>
+    			</li>
+    			<li class="slider_connect field_setting">
+    				<div style="clear:both;">
+    					<?php _e( 'Connect', 'gsf-locale' ); ?>
+    					<?php gform_tooltip( 'slider_connect' ); ?>
+    				</div>
+    				<div style="width:25%;">
+    					<select id="slider_connect" onchange="SetFieldProperty('slider_connect', this.value);">
+    						<option value="none"><?php _e( 'None', 'gsf-locale' ); ?></option>
+    						<option value="lower"><?php _e( 'Lower', 'gsf-locale' ); ?></option>
+    						<option value="upper"><?php _e( 'Upper', 'gsf-locale' ); ?></option>
     					</select>
     				</div>
     			</li>
