@@ -36,7 +36,6 @@ class GFSliderFields extends GFAddOn {
 	    load_plugin_textdomain( 'typewheel', false, basename( dirname( __file__ ) ) . '/languages/' );
 
         // creating the slider field
-        add_filter( 'gform_add_field_buttons', array( $this, 'add_field_buttons' ) );
         add_action( 'gform_editor_js_set_default_values', array( $this, 'set_defaults' ) );
         add_action( 'gform_editor_js', array( $this, 'editor_js' ) );
         add_filter( 'gform_field_standard_settings' , array( $this, 'slider_settings' ) , 10, 2 );
@@ -163,56 +162,6 @@ class GFSliderFields extends GFAddOn {
 
 
 	// # ADMIN FUNCTIONS -----------------------------------------------------------------------------------------------
-
-    /**
-	 * Reassign the slider field button to advanced group
-	 *
-	 * @since    0.1
-	 */
-    function add_field_buttons( $field_groups ) {
-
-    	// Loop through field groups
-    	foreach( $field_groups as $gkey => $group ) {
-
-    		// Find standard group
-    		if ( 'standard_fields' == $group['name'] ) {
-
-    			// Loop through standard fields
-    			foreach ( $group['fields'] as $fkey => $field ) {
-
-    				// If slider field, then grab it and unset from standard field group array
-    				if ( isset( $field['onclick'] ) && "StartAddField('slider');" == $field['onclick'] ) {
-
-    					$slider = $field;
-    					unset( $field_groups[ $gkey ]['fields'][ $fkey ] );
-    					break;
-
-    				}
-
-    			}
-    			break;
-
-    		}
-
-    	}
-
-    	// Loop through field groups
-    	foreach( $field_groups as &$group ) {
-
-    		// Find advanced group
-    		if( 'advanced_fields' == $group['name'] ) {
-
-    			// Add slider field
-    			$group['fields'][] = $slider;
-    			break;
-
-    		}
-
-    	}
-
-    	return $field_groups;
-
-    } // end add_field_buttons
 
     /**
 	 * Set default values when adding a slider
