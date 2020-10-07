@@ -56,7 +56,7 @@ class GF_Field_Slider extends GF_Field {
     * @return boolean
     */
 	public function is_conditional_logic_supported() {
-		return false;
+		return true;
 	}
 
    /**

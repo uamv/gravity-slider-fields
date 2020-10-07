@@ -6,7 +6,7 @@ Tags: gravity, forms, slider, field, number
 Requires at least: 3.1
 Requires PHP: 5.6
 Tested up to: 5.3
-Stable tag: 1.8
+Stable tag: 1.9
 License: GPLv2 or later
 
 Adds slider fields to Gravity Forms
@@ -65,53 +65,59 @@ Yes. You must install [Gravity Forms](http://gravityforms.com "Gravity Forms") f
 
 == Changelog ==
 
+= 1.9 =
+📦 NEW: Use sliders in conditional logic
+👌 IMPROVE: Performance when triggering change
+👌 IMPROVE: Disable delayed admin notice
+👌 IMPROVE: Use emoji-log for changelog
+
 = 1.8 =
-* Fix: Properly handle connect option for existing slider fields
+🐛 FIX: Properly handle connect option for existing slider fields
 
 = 1.7 =
-* Allow connecting handle to lower or upper edge
+📦 NEW: Allow connecting handle to lower or upper edge
 
 = 1.6 =
-* Remove call to deprecated GF_Field::get_conditional_logic_event
+👌 IMPROVE: Remove call to deprecated GF_Field::get_conditional_logic_event
 
 = 1.5 =
-* Update noUiSlider to 13.1.4
-* Add calculation merge tags
-* Fix hover-drag issue
-* Fix tab focus issue
-* Fix for error: `Slider was already initialized`
+👌 IMPROVE: Update noUiSlider to 13.1.4
+📦 NEW: Add calculation merge tags
+🐛 FIX: Hover-drag issue
+🐛 FIX: Tab focus issue
+🐛 FIX: error: `Slider was already initialized`
 
 = 1.4 =
-* Delay the notice
+👌 IMPROVE: Delay the notice
 
 = 1.3 =
-* Fix the fix
+🐛 FIX: Better fix
 
 = 1.2 =
-* Fixes jQuery error in loading noUiSlider
-* Adds delayed & dismissible admin notice
+🐛 FIX: jQuery error in loading noUiSlider
+📦 NEW: Add delayed & dismissible admin notice
 
 = 1.1 =
-* The slider merge tag can now be used in calculations *
+📦 NEW: The slider merge tag can now be used in calculations
 
 = 1.0 =
-* rewrite codebase to use GFAddOn
+👌 IMPROVE: Rewrite codebase to use GFAddOn
 
 = 0.9 =
-* Plays nicer with Gravity Forms
-* Updates noUiSlider version
+👌 IMPROVE: Play nicer with Gravity Forms
+👌 IMPROVE: Update noUiSlider version
 
 = 0.8 =
-* Adds rendering of field in form editor
+📦 NEW: Add rendering of field in form editor
 
 = 0.7 =
-* Added class existence check for GF_Fields
+📦 NEW: Add class existence check for GF_Fields
 
 = 0.6 =
-* Cautionary note in the readme.
+📖 DOC: Add cautionary note in the readme.
 
 = 0.5 =
-* Fix for slider failure in certain instance
+🐛 FIX: Slider failure in certain instance
 
 = 0.4 =
-* Initial Release
+🚀 RELEASE: Initial
