@@ -97,7 +97,7 @@ jQuery(document).ready(function($){
 						input.attr('value',sliderVal);
 
 						// Triggers update of merge tags on mouseup and keyup
-						slider.trigger('change');
+						$('.gfield .slider').trigger('change');
 
 					});
 

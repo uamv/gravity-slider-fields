@@ -5,8 +5,8 @@ Donate link: https://typewheel.xyz/give/?ref=Gravity%20Slider%20Fields
 Tags: gravity, forms, slider, field, number
 Requires at least: 3.1
 Requires PHP: 5.6
-Tested up to: 5.3
-Stable tag: 1.9
+Tested up to: 6.02
+Stable tag: 2.0
 License: GPLv2 or later
 
 Adds slider fields to Gravity Forms
@@ -41,6 +41,7 @@ The plugin adds a new slider field within the advanced field group. Customize yo
 * value relations (descriptive terms that relate to min & max number values of slider)
 * step (precision of values that can selected along the slider)
 * show value (select whether to hide, show on hover & drag, or always shows the currently selected value)
+* connect (visually connect the handle to the upper or lower edge of the slider)
 
 If value relations have been defined, they will be displayed along with the field label in form entry details and when using merge tags.
 
@@ -65,11 +66,15 @@ Yes. You must install [Gravity Forms](http://gravityforms.com "Gravity Forms") f
 
 == Changelog ==
 
+= 2.0 =
+🐛 FIX: Maybe fix acceptance of default value
+🐛 FIX: Default input not being hidden properly
+
 = 1.9 =
 📦 NEW: Use sliders in conditional logic
-👌 IMPROVE: Performance when triggering change
-👌 IMPROVE: Disable delayed admin notice
-👌 IMPROVE: Use emoji-log for changelog
+✨ IMPROVE: Performance when triggering change
+✨ IMPROVE: Disable delayed admin notice
+✨ IMPROVE: Use emoji-log for changelog
 
 = 1.8 =
 🐛 FIX: Properly handle connect option for existing slider fields
@@ -78,17 +83,17 @@ Yes. You must install [Gravity Forms](http://gravityforms.com "Gravity Forms") f
 📦 NEW: Allow connecting handle to lower or upper edge
 
 = 1.6 =
-👌 IMPROVE: Remove call to deprecated GF_Field::get_conditional_logic_event
+✨ IMPROVE: Remove call to deprecated GF_Field::get_conditional_logic_event
 
 = 1.5 =
-👌 IMPROVE: Update noUiSlider to 13.1.4
+✨ IMPROVE: Update noUiSlider to 13.1.4
 📦 NEW: Add calculation merge tags
 🐛 FIX: Hover-drag issue
 🐛 FIX: Tab focus issue
 🐛 FIX: error: `Slider was already initialized`
 
 = 1.4 =
-👌 IMPROVE: Delay the notice
+✨ IMPROVE: Delay the notice
 
 = 1.3 =
 🐛 FIX: Better fix
@@ -101,11 +106,11 @@ Yes. You must install [Gravity Forms](http://gravityforms.com "Gravity Forms") f
 📦 NEW: The slider merge tag can now be used in calculations
 
 = 1.0 =
-👌 IMPROVE: Rewrite codebase to use GFAddOn
+✨ IMPROVE: Rewrite codebase to use GFAddOn
 
 = 0.9 =
-👌 IMPROVE: Play nicer with Gravity Forms
-👌 IMPROVE: Update noUiSlider version
+✨ IMPROVE: Play nicer with Gravity Forms
+✨ IMPROVE: Update noUiSlider version
 
 = 0.8 =
 📦 NEW: Add rendering of field in form editor

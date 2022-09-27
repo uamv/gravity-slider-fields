@@ -3,7 +3,7 @@
 Plugin Name: Gravity Slider Fields
 Plugin URI: https://wordpress.org/plugins/gravity-slider-fields/
 Description: Adds slider fields to Gravity Forms
-Version: 1.9
+Version: 2.0
 Author: Typewheel
 Author URI: https://typewheel.xyz/
 
@@ -25,7 +25,7 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 */
 
-define( 'GF_SLIDER_FIELDS_VERSION', '1.9' );
+define( 'GF_SLIDER_FIELDS_VERSION', '2.0' );
 
 add_action( 'gform_loaded', array( 'GF_Slider_Fields_Bootstrap', 'load' ), 5 );
 

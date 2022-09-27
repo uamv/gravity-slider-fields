@@ -1,5 +1,9 @@
-.gfield input.slider {
-	display: none;
+.gform_wrapper .ginput_container_slider {
+    position: relative;
+}
+.gform_wrapper .gfield input.slider {
+	position: absolute;
+    left: -9999px;
 }
 .slider-display {
 	margin-top: 2.5em;

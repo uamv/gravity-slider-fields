@@ -31,6 +31,7 @@ class GFSliderFields extends GFAddOn {
 	 * Handles hooks and loading of language files.
 	 */
 	public function init() {
+        
 		parent::init();
 
 	    load_plugin_textdomain( 'typewheel', false, basename( dirname( __file__ ) ) . '/languages/' );
@@ -101,7 +102,7 @@ class GFSliderFields extends GFAddOn {
 			),
 			array(
 				'handle'  => 'slider_fields',
-				'src'     => $this->get_base_url() . '/js/slider.min.js',
+				'src'     => $this->get_base_url() . '/js/slider.js',
 				'version' => $this->_version,
 				'deps'    => array( 'jquery', 'noUiSlider', 'wNumb' ),
 				'enqueue' => array(
